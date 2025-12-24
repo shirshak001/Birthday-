@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-transition">
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Wishes</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="birthday-icon">
+                <svg viewBox="0 0 100 100" class="cake-svg">
+                    <path d="M20,70 L80,70 L75,90 L25,90 Z" fill="#ff6b9d"/>
+                    <path d="M15,50 L85,50 L80,70 L20,70 Z" fill="#ffc1e3"/>
+                    <path d="M10,30 L90,30 L85,50 L15,50 Z" fill="#ff6b9d"/>
+                    <rect x="48" y="15" width="4" height="15" fill="#fff"/>
+                    <path d="M50,10 Q45,15 50,20 Q55,15 50,10" fill="#ffbe76"/>
+                </svg>
+            </div>
+            <h1 class="main-heading">Happy Birthday</h1>
+            <h2 class="sub-heading">My Beautiful Love!</h2>
+            <p class="birthday-message">
+                Today is all about celebrating YOU! 
+                The most amazing person who fills my life with joy, laughter, and endless love. 
+                You make every day brighter just by being you!
+            </p>
+            <button class="scroll-btn" onclick="smoothScroll('#wishes')">
+                See Your Special Message
+                <span class="arrow">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+        <div class="floating-hearts">
+            <svg class="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></svg>
+            <svg class="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></svg>
+            <svg class="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></svg>
+            <svg class="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></svg>
+            <svg class="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></svg>
+        </div>
+    </section>
+
+    <!-- Birthday Wishes Section -->
+    <section id="wishes" class="wishes-section">
+        <div class="container">
+            <h2 class="section-title">A Special Message For You</h2>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <svg viewBox="0 0 24 24" width="60" height="60">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#ffbe76"/>
+                    </svg>
+                </div>
+                <p class="wish-text">
+                    On this special day, I want you to know how incredibly grateful I am to have you in my life. 
+                    Your smile lights up my darkest days, your laugh is my favorite sound, 
+                    and your love is my greatest treasure.
+                </p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <svg viewBox="0 0 24 24" width="60" height="60">
+                        <path d="M9.5 2L12 9.5L19.5 12L12 14.5L9.5 22L7 14.5L-0.5 12L7 9.5z" fill="#a29bfe" transform="translate(2.5, 0)"/>
+                        <circle cx="18" cy="6" r="2" fill="#74b9ff"/>
+                    </svg>
+                </div>
+                <p class="wish-text">
+                    Every moment with you is a gift, every memory we create is precious, 
+                    and every day with you is an adventure I cherish. 
+                    You're not just my girlfriend, you're my best friend, my partner, and my everything.
+                </p>
+            </div>
+            
+            <div class="wish-card">
+                <div class="wish-icon">
+                    <svg viewBox="0 0 24 24" width="60" height="60">
+                        <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10z" fill="#fd79a8"/>
+                        <circle cx="6" cy="6" r="1.5" fill="#ffbe76"/>
+                        <circle cx="18" cy="18" r="1.5" fill="#ffbe76"/>
+                    </svg>
+                </div>
+                <p class="wish-text">
+                    May this year bring you all the happiness you deserve, 
+                    all the success you dream of, and all the love that fills your beautiful heart. 
+                    Here's to more laughter, more adventures, and more incredible memories together!
+                </p>
+            </div>
+            
+            <div class="love-note">
+                <p>
+                    <svg viewBox="0 0 24 24" width="24" height="24" class="inline-icon">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="white"/>
+                    </svg>
+                    Forever yours, with all my love
+                </p>
+            </div>
+            
+            <div class="love-meter-section">
+                <h3 class="love-meter-title">My Love For You</h3>
+                <div class="love-meter">
+                    <div class="love-meter-fill"></div>
+                </div>
+                <p class="love-meter-text">∞ Infinity & Beyond!</p>
+            </div>
+
+            <div class="next-page-btn">
+                <a href="gallery.html" class="btn-primary">
+                    View Our Memories
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M10 17l5-5-5-5v10z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="love-activities">
+                <button class="activity-btn" onclick="showReasonsModal()">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+                    </svg>
+                    Why I Love You
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                Made with 
+                <svg viewBox="0 0 24 24" width="20" height="20" class="inline-icon">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="white"/>
+                </svg>
+                for the most amazing person in the world
+            </p>
+            <p class="footer-year">© 2025 | Happy Birthday!</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="romantic-features.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
