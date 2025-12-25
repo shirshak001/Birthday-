@@ -441,12 +441,6 @@ document.addEventListener('DOMContentLoaded', () => {
         initRomanticFeatures();
     }
     
-    // Add greeting message
-    setTimeout(() => {
-        // Popup functionality removed
-        }
-    }, 2000);
-    
     // Lightbox close button
     const closeBtn = document.querySelector('.lightbox-close');
     if (closeBtn) {

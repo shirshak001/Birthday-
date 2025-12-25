@@ -5,18 +5,11 @@
 const photoConfig = {
     // Add your photos here
     photos: [
-        // Example format:
-        // { src: 'photos/photo1.jpg', caption: 'Our first date ❤️' },
-        // { src: 'photos/photo2.jpg', caption: 'Beach day memories 🏖️' },
-        // { src: 'photos/photo3.jpg', caption: 'Adventure time! 🎉' },
-        
-        // Uncomment and customize the examples below:
-        // { src: 'photos/photo1.jpg', caption: 'Beautiful moment together' },
-        // { src: 'photos/photo2.jpg', caption: 'My favorite smile' },
-        // { src: 'photos/photo3.jpg', caption: 'Making memories' },
+        { src: 'photos/photo1.jpg', caption: 'You light up my world 🌟' },
+        // Add more photos below:
+        // { src: 'photos/photo2.jpg', caption: 'Beautiful moment together' },
+        // { src: 'photos/photo3.jpg', caption: 'My favorite smile' },
         // { src: 'photos/photo4.jpg', caption: 'Forever and always' },
-        // { src: 'photos/photo5.jpg', caption: 'Love you to the moon' },
-        // { src: 'photos/photo6.jpg', caption: 'Best day ever' },
     ],
     
     // Customize colors (optional)
