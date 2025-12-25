@@ -187,6 +187,11 @@ function openLightbox(index) {
     const lightboxImg = document.getElementById('lightbox-img');
     const caption = document.getElementById('lightbox-caption');
     
+    if (!lightbox || !lightboxImg || !caption) {
+        console.error('Lightbox elements not found');
+        return;
+    }
+    
     lightbox.style.display = 'block';
     lightboxImg.src = galleryImages[index].src;
     caption.textContent = galleryImages[index].caption || '';
@@ -197,6 +202,8 @@ function openLightbox(index) {
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+    
     lightbox.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
@@ -214,6 +221,11 @@ function navigateLightbox(direction) {
     
     const lightboxImg = document.getElementById('lightbox-img');
     const caption = document.getElementById('lightbox-caption');
+    
+    if (!lightboxImg || !caption) {
+        console.error('Lightbox elements not found in navigation');
+        return;
+    }
     
     lightboxImg.src = galleryImages[currentImageIndex].src;
     caption.textContent = galleryImages[currentImageIndex].caption || '';
