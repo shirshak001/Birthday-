@@ -443,8 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add greeting message
     setTimeout(() => {
-        if (typeof showLoveQuotePopup === 'function') {
-            showLoveQuotePopup();
+        // Popup functionality removed
         }
     }, 2000);
     
