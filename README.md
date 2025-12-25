@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# Birthday-
+=======
 # 🎉 Birthday Surprise Landing Page
 
 A beautiful, mobile-first responsive birthday surprise website with creative animations, confetti effects, and photo gallery. Features a multi-page experience with smooth transitions!
@@ -165,3 +168,4 @@ Created with love for creating memorable birthday surprises! 🎂✨
 ---
 
 **Need help?** Check the comments in each file for detailed guidance.
+>>>>>>> 997ce40 (Initial commit: Birthday surprise website with enhanced parallax effects and romantic features)
