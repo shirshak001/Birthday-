@@ -144,6 +144,9 @@ let galleryImages = [];
 function loadGallery() {
     const galleryGrid = document.getElementById('photoGallery');
     
+    // Exit if gallery element doesn't exist (not on gallery page)
+    if (!galleryGrid) return;
+    
     // Check if photos are configured
     if (typeof photoConfig !== 'undefined' && photoConfig.photos.length > 0) {
         galleryGrid.innerHTML = ''; // Clear placeholders
@@ -186,6 +189,7 @@ function openLightbox(index) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const caption = document.getElementById('lightbox-caption');
+    const counter = document.getElementById('lightbox-counter');
     
     if (!lightbox || !lightboxImg || !caption) {
         console.error('Lightbox elements not found');
@@ -195,6 +199,10 @@ function openLightbox(index) {
     lightbox.style.display = 'flex';
     lightboxImg.src = galleryImages[index].src;
     caption.textContent = galleryImages[index].caption || '';
+    
+    if (counter) {
+        counter.textContent = `${index + 1} / ${galleryImages.length}`;
+    }
     
     // Prevent body scroll when lightbox is open
     document.body.style.overflow = 'hidden';
@@ -221,6 +229,7 @@ function navigateLightbox(direction) {
     
     const lightboxImg = document.getElementById('lightbox-img');
     const caption = document.getElementById('lightbox-caption');
+    const counter = document.getElementById('lightbox-counter');
     
     if (!lightboxImg || !caption) {
         console.error('Lightbox elements not found in navigation');
@@ -229,6 +238,10 @@ function navigateLightbox(direction) {
     
     lightboxImg.src = galleryImages[currentImageIndex].src;
     caption.textContent = galleryImages[currentImageIndex].caption || '';
+    
+    if (counter) {
+        counter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+    }
 }
 
 // === ADVANCED PARALLAX SCROLL EFFECT ===
@@ -478,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keyboard navigation for lightbox
     document.addEventListener('keydown', (e) => {
         const lightbox = document.getElementById('lightbox');
-        if (lightbox && lightbox.style.display === 'block') {
+        if (lightbox && (lightbox.style.display === 'flex' || lightbox.style.display === 'block')) {
             if (e.key === 'Escape') {
                 closeLightbox();
             } else if (e.key === 'ArrowLeft') {
