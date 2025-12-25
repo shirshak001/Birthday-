@@ -192,7 +192,7 @@ function openLightbox(index) {
         return;
     }
     
-    lightbox.style.display = 'block';
+    lightbox.style.display = 'flex';
     lightboxImg.src = galleryImages[index].src;
     caption.textContent = galleryImages[index].caption || '';
     
