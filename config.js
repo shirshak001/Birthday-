@@ -3,13 +3,22 @@
 // ============================================
 
 const photoConfig = {
-    // Add your photos here
+    // Beautiful memories together
     photos: [
-        { src: 'photos/photo1.jpg', caption: 'You light up my world 🌟' },
-        // Add more photos below:
-        // { src: 'photos/photo2.jpg', caption: 'Beautiful moment together' },
-        // { src: 'photos/photo3.jpg', caption: 'My favorite smile' },
-        // { src: 'photos/photo4.jpg', caption: 'Forever and always' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.00 PM.jpeg', caption: 'You light up every moment 🌟' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.01 PM.jpeg', caption: 'Your smile is my sunshine ☀️' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.13 PM (1).jpeg', caption: 'Forever grateful for you 💖' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.13 PM (2).jpeg', caption: 'Making beautiful memories together 📸' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.13 PM.jpeg', caption: 'Every moment with you is precious 💕' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.16 PM (1).jpeg', caption: 'My favorite person in the world 🌍' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.16 PM (2).jpeg', caption: 'You make everything better ✨' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.16 PM.jpeg', caption: 'Adventures with you are the best 🎉' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.17 PM (1).jpeg', caption: 'Love captured in a moment 💝' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.17 PM.jpeg', caption: 'My heart belongs to you 💗' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.18 PM (1).jpeg', caption: 'You are my happy place 🏡' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.18 PM.jpeg', caption: 'Together is my favorite place to be 🌈' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.20 PM.jpeg', caption: 'Creating our own paradise 🌺' },
+        { src: 'photos/WhatsApp Image 2025-12-25 at 5.22.23 PM.jpeg', caption: 'Forever and always, it\'s you 💫' },
     ],
     
     // Customize colors (optional)

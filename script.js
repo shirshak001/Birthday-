@@ -159,7 +159,13 @@ function loadGallery() {
             img.alt = photo.caption || `Memory ${index + 1}`;
             img.loading = 'lazy';
             
+            // Add caption overlay
+            const captionOverlay = document.createElement('div');
+            captionOverlay.className = 'caption-overlay';
+            captionOverlay.textContent = photo.caption || '';
+            
             galleryItem.appendChild(img);
+            galleryItem.appendChild(captionOverlay);
             galleryItem.addEventListener('click', () => openLightbox(index));
             
             galleryGrid.appendChild(galleryItem);
