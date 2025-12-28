@@ -151,19 +151,15 @@ function loadGallery() {
     if (typeof photoConfig !== 'undefined' && photoConfig.photos.length > 0) {
         galleryGrid.innerHTML = ''; // Clear placeholders
         
-        // Duplicate photos for infinite scroll effect
-        const photosToDisplay = [...photoConfig.photos, ...photoConfig.photos];
-        
-        photosToDisplay.forEach((photo, index) => {
+        photoConfig.photos.forEach((photo, index) => {
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
-            const originalIndex = index % photoConfig.photos.length;
-            galleryItem.setAttribute('data-index', originalIndex);
+            galleryItem.setAttribute('data-index', index);
             galleryItem.style.animationDelay = `${index * 0.1}s`;
             
             const img = document.createElement('img');
             img.src = photo.src;
-            img.alt = photo.caption || `Memory ${originalIndex + 1}`;
+            img.alt = photo.caption || `Memory ${index + 1}`;
             img.loading = 'lazy';
             
             // Add caption overlay - always visible
@@ -173,14 +169,10 @@ function loadGallery() {
             
             galleryItem.appendChild(img);
             galleryItem.appendChild(captionOverlay);
-            galleryItem.addEventListener('click', () => openLightbox(originalIndex));
+            galleryItem.addEventListener('click', () => openLightbox(index));
             
             galleryGrid.appendChild(galleryItem);
-            
-            // Store unique photos only
-            if (index < photoConfig.photos.length) {
-                galleryImages.push(photo);
-            }
+            galleryImages.push(photo);
         });
     } else {
         // Keep placeholders if no photos configured
