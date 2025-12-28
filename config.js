@@ -41,48 +41,18 @@ const photoConfig = {
             title: 'My Everything',
             description: 'You mean more to me than words could ever express'
         },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.16 PM (2).jpeg', 
-            caption: 'You make everything better',
-            title: 'Better Together',
-            description: 'Life is infinitely better with you by my side'
-        },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.16 PM.jpeg', 
-            caption: 'Adventures with you are the best',
-            title: 'Our Adventure',
-            description: 'Every journey becomes magical when we explore together'
-        },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.17 PM (1).jpeg', 
-            caption: 'Love captured in a moment',
-            title: 'Captured Love',
-            description: 'This moment perfectly captures the love we share'
-        },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.17 PM.jpeg', 
-            caption: 'My heart belongs to you',
-            title: 'Heart & Soul',
-            description: 'You have my heart, now and forever'
-        },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.18 PM (1).jpeg', 
-            caption: 'You are my happy place',
-            title: 'Safe Haven',
-            description: 'In your arms, I find peace, joy, and home'
-        },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.18 PM.jpeg', 
-            caption: 'Together is my favorite place to be',
-            title: 'Together Forever',
-            description: 'Wherever we are, as long as we\'re together, I\'m home'
-        },
-        { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.20 PM.jpeg', 
-            caption: 'Creating our own paradise',
-            title: 'Our Paradise',
-            description: 'We\'ve built something beautiful together, our own little paradise'
-        },
+        // { 
+        //     src: 'photos/WhatsApp Image 2025-12-25 at 5.22.17 PM.jpeg', 
+        //     caption: 'My heart belongs to you',
+        //     title: 'Heart & Soul',
+        //     description: 'You have my heart, now and forever'
+        // },
+        // { 
+        //     src: 'photos/WhatsApp Image 2025-12-25 at 5.22.20 PM.jpeg', 
+        //     caption: 'Creating our own paradise',
+        //     title: 'Our Paradise',
+        //     description: 'We\'ve built something beautiful together, our own little paradise'
+        // },
         { 
             src: 'photos/WhatsApp Image 2025-12-25 at 5.22.23 PM.jpeg', 
             caption: 'Forever and always, it\'s you',

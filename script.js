@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     }, 100);
     
+    // Load photo into mini polaroid
+    loadMiniPolaroid();
+    
     // Add page transition on navigation links
     document.querySelectorAll('a[href]').forEach(link => {
         link.addEventListener('click', (e) => {
@@ -126,6 +129,128 @@ setTimeout(() => {
 
 } // Close canvas if block
 
+// === MINI POLAROID CAROUSEL ===
+let miniCarouselInterval;
+let miniCarouselIndex = 0;
+let miniSlides = [];
+let miniDots = [];
+let miniCaptionEl = null;
+const bannedPhotos = [
+    'photos/WhatsApp Image 2025-12-25 at 5.22.16 PM (2).jpeg',
+    'photos/WhatsApp Image 2025-12-25 at 5.22.17 PM (1).jpeg',
+    'photos/WhatsApp Image 2025-12-25 at 5.22.18 PM.jpeg'
+];
+
+function loadMiniPolaroid() {
+    const polaroidMini = document.getElementById('polaroidMini');
+    if (!polaroidMini) return;
+    if (typeof photoConfig === 'undefined' || !photoConfig.photos || photoConfig.photos.length === 0) return;
+
+    // Exclude any banned photos, then use up to ten for the mini carousel
+    const photos = photoConfig.photos
+        .filter(p => !bannedPhotos.includes(p.src))
+        .slice(0, 10);
+
+    // Clear previous content if reloading
+    polaroidMini.innerHTML = '';
+
+    // Slides wrapper is the polaroidMini itself; create slides
+    photos.forEach((photo, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'mini-slide';
+
+        const img = document.createElement('img');
+        img.src = photo.src;
+        img.alt = photo.caption || `Memory ${index + 1}`;
+        img.loading = index === 0 ? 'eager' : 'lazy';
+
+        slide.appendChild(img);
+        if (index === 0) slide.classList.add('active');
+        polaroidMini.appendChild(slide);
+    });
+
+    // Dots
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'mini-dots';
+    photos.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'mini-dot';
+        if (index === 0) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+    });
+    polaroidMini.appendChild(dotsContainer);
+
+    // Loving caption below the photo area (inside the white frame but outside photo)
+    const captionParent = polaroidMini.parentElement;
+    if (captionParent) {
+        const oldCaption = captionParent.querySelector('.mini-caption');
+        if (oldCaption) oldCaption.remove();
+
+        const caption = document.createElement('div');
+        caption.className = 'mini-caption';
+        miniCaptionEl = caption;
+        captionParent.appendChild(caption);
+    }
+
+    // Set initial caption
+    updateMiniCaption(photos, miniCarouselIndex);
+
+    // Cache slide and dot references
+    miniSlides = Array.from(polaroidMini.querySelectorAll('.mini-slide'));
+    miniDots = Array.from(polaroidMini.querySelectorAll('.mini-dot'));
+
+    // Start carousel
+    miniCarouselIndex = 0;
+    if (miniSlides.length > 1) {
+        startMiniCarousel();
+    } else {
+        stopMiniCarousel();
+    }
+}
+
+function startMiniCarousel() {
+    stopMiniCarousel();
+    if (miniSlides.length < 2) return;
+    miniCarouselInterval = setInterval(() => advanceMiniSlide(), 1800);
+}
+
+function stopMiniCarousel() {
+    if (miniCarouselInterval) {
+        clearInterval(miniCarouselInterval);
+        miniCarouselInterval = null;
+    }
+}
+
+function advanceMiniSlide() {
+    if (!miniSlides.length) return;
+
+    miniSlides[miniCarouselIndex].classList.remove('active');
+    if (miniDots[miniCarouselIndex]) miniDots[miniCarouselIndex].classList.remove('active');
+
+    miniCarouselIndex = (miniCarouselIndex + 1) % miniSlides.length;
+
+    miniSlides[miniCarouselIndex].classList.add('active');
+    if (miniDots[miniCarouselIndex]) miniDots[miniCarouselIndex].classList.add('active');
+
+    // Update caption to match current slide
+    if (typeof photoConfig !== 'undefined' && photoConfig.photos && photoConfig.photos.length) {
+        const photos = photoConfig.photos.filter(p => !bannedPhotos.includes(p.src)).slice(0, 10);
+        updateMiniCaption(photos, miniCarouselIndex);
+    }
+}
+
+// Pause carousel when window not focused to avoid runaway timers
+window.addEventListener('blur', stopMiniCarousel);
+window.addEventListener('focus', () => {
+    if (miniSlides.length > 1) startMiniCarousel();
+});
+
+function updateMiniCaption(photos, index) {
+    if (!miniCaptionEl || !photos || !photos.length) return;
+    const activePhoto = photos[index % photos.length];
+    miniCaptionEl.textContent = activePhoto?.caption || 'Our favorite memories together.';
+}
+
 // === SMOOTH SCROLL FUNCTION ===
 function smoothScroll(target) {
     const element = document.querySelector(target);
@@ -149,9 +274,12 @@ function loadGallery() {
     
     // Check if photos are configured
     if (typeof photoConfig !== 'undefined' && photoConfig.photos.length > 0) {
+        const photos = photoConfig.photos.filter(p => !bannedPhotos.includes(p.src));
+
         galleryGrid.innerHTML = ''; // Clear placeholders
+        galleryImages = [];
         
-        photoConfig.photos.forEach((photo, index) => {
+        photos.forEach((photo, index) => {
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
             galleryItem.setAttribute('data-index', index);
