@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Load photo into mini polaroid
     loadMiniPolaroid();
+
+    // Start background birthday song
+    initBirthdaySong();
     
     // Add page transition on navigation links
     document.querySelectorAll('a[href]').forEach(link => {
@@ -260,6 +263,44 @@ function smoothScroll(target) {
             block: 'start' 
         });
     }
+}
+
+// === BIRTHDAY SONG (BACKGROUND) ===
+function initBirthdaySong() {
+    const audio = document.getElementById('birthdaySong');
+
+    if (!audio) return;
+
+    audio.loop = true;
+    audio.autoplay = true;
+    audio.playsInline = true;
+    audio.volume = 0.8;
+
+    const tryPlay = () => {
+        audio.play()
+            .catch((err) => {
+                console.error('Audio play blocked', err);
+            });
+    };
+
+    // Immediate attempt
+    tryPlay();
+
+    // Unlock on first user interaction if blocked
+    const unlock = () => {
+        tryPlay();
+        window.removeEventListener('pointerdown', unlock);
+        window.removeEventListener('touchstart', unlock);
+    };
+    window.addEventListener('pointerdown', unlock, { once: true });
+    window.addEventListener('touchstart', unlock, { once: true });
+
+    // Resume when coming back to tab
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && audio.paused) {
+            tryPlay();
+        }
+    });
 }
 
 // === GALLERY FUNCTIONALITY ===
