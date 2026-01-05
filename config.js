@@ -24,7 +24,7 @@ const photoConfig = {
             description: 'Every day with you is a blessing I cherish deeply'
         },
         { 
-            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.13 PM (2).jpeg', 
+            src: 'photos/WhatsApp Image 2025-12-25 at 5.22.18 PM (1).jpeg', 
             caption: 'Making beautiful memories together',
             title: 'Sweet Memories',
             description: 'Creating unforgettable moments together, one day at a time'

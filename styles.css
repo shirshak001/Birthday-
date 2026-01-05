@@ -419,6 +419,10 @@ body:has(.main-nav) .gallery-header {
     transition: all 0.1s ease;
 }
 
+.bg-audio-hidden {
+    display: none;
+}
+
 .arrow {
     display: inline-flex;
     align-items: center;
